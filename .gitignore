@@ -1,0 +1,29 @@
+# Build artifacts
+*.bin
+*.o
+*.elf
+*.iso
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Makefile build output
+build/
+dist/
