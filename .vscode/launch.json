@@ -2,23 +2,30 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "Debug with GDB",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${workspaceFolder}/boot.img",
       "args": [],
       "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
       "externalConsole": true,
-      "cwd": "c:/Users/joshu/AI-OS-Development/kernel",
-      "program": "c:/Users/joshu/AI-OS-Development/kernel/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
         }
-      ]
+      ],
+      "preLaunchTask": "Run in QEMU",
+      "miDebuggerArgs": "-x ${workspaceFolder}/.gdbinit",
+      "logging": {
+        "moduleLoad": false,
+        "trace": false
+      }
     }
   ]
 }

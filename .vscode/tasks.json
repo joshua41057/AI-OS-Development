@@ -1,1 +1,38 @@
-# Task automation
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Bootloader",
+            "type": "shell",
+            "command": "make",
+            "args": ["-C", "bootloader"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Kernel",
+            "type": "shell",
+            "command": "make",
+            "args": ["-C", "kernel"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run in QEMU",
+            "type": "shell",
+            "command": "./scripts/build.sh",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "dependsOn": ["Build Bootloader", "Build Kernel"]
+        }
+    ]
+}

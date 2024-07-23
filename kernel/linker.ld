@@ -1,1 +1,19 @@
-# Linker script
+/* AI-OS-Development/kernel/linker.ld */
+OUTPUT_FORMAT(elf32-i386)
+ENTRY(_start)
+SECTIONS
+{
+    . = 1M;
+    .text :
+    {
+        *(.text)
+    }
+    .data :
+    {
+        *(.data)
+    }
+    .bss :
+    {
+        *(.bss)
+    }
+}
