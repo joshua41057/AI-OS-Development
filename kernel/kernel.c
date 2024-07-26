@@ -1,5 +1,8 @@
 // AI-OS-Development/kernel/kernel.c
 
+extern void gdt_install();
+extern void idt_install();
+
 // Video memory address for text mode
 #define VIDEO_MEMORY_ADDRESS 0xB8000
 #define VIDEO_MEMORY_SIZE    0xFA00  // 80x25 characters, 2 bytes per character
@@ -31,6 +34,8 @@ void kernel_init() {
 
 // Main kernel function
 void kernel_main() {
+    gdt_install();
+    idt_install();
     kernel_init();  // Initialize the kernel and print a startup message
 
     // Main loop to keep the kernel running
